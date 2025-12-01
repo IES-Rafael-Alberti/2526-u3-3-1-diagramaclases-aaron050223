@@ -16,7 +16,9 @@ Del análisis de las especificaciones, identificamos las siguientes clases:
    - Atributos: titulo, isbn, numeroPaginas, precio
    - Métodos: leer(), getTitulo(), getPrecio()
 
-### 1. Asociación simple (Autor - Libro)
+## Análisis de Relaciones
+
+### Asociación simple (Autor - Libro)
 - **Nombre**: "escribe"
 - **Tipo**: Asociación simple (no composición, porque el libro puede existir aunque el autor muera)
 - **Cardinalidad**: 
