@@ -63,6 +63,7 @@ class Libro {
     + getPrecio()
 }
 
+'RELACIONES'
 Autor "1" -- "1..*" Libro : escribe
 @enduml
 ```
