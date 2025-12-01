@@ -20,6 +20,7 @@ build/
 .env.development.local
 .env.test.local
 .env.production.local
+.venv/
 # Ignorando ficheros de cobertura de tests
 coverage/
 # Ignorando ficheros temporales
@@ -53,3 +54,4 @@ build/
 # Ignorando ficheros de entorno de Python
 .env/
 # Ignorando ficheros de configuración de Java
+src/pruebas.pu
