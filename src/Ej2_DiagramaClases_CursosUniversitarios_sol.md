@@ -65,10 +65,21 @@ Del análisis de las especificaciones, identificamos las siguientes clases:
 
 ```plantuml
 @startuml ejercicio2
-class Profesor {
+class Curso {
     'ATRIBUTOS'
+    - codigoUnico: int
+    - nombre: str
+    - descripcion: str
+    - creditos: int
+    - nivel: str
+    'MÉTODOS'
+    + getEstudiantesMatriculados()
+}
+
+class Profesor {
+  'ATRIBUTOS'
     - identificador: int
-    - nombreCompleto: str
+    - nombreCOmpleto: str
     - email: str
     - departamento: str
     'MÉTODOS'
@@ -90,25 +101,14 @@ class Estudiante {
     + presentarseExamenes()
 }
 
-class Curso {
-    'ATRIBUTOS'
-    - codigoUnico: int
-    - nombre: str
-    - descripcion: str
-    - creditos: int
-    - nivel: str
-    'MÉTODOS'
-    + getEstudiantesMatriculados()
-}
-
 class Matricula {
     'ATRIBUTOS'
     - fechaMatricula: date
     - nota: float
 }
 
-' RELACIONES'
-Profesor "1" -- "1..*" Curso : imparte
+'RELACIONES'
+Profesor "1" -- "1..*" Curso : " imparte"
 Estudiante "1" -- "0..*" Matricula
 Curso "1" -- "0..*" Matricula
 @enduml
