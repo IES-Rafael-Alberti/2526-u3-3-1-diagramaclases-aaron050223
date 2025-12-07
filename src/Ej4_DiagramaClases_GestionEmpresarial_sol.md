@@ -1,4 +1,4 @@
-# Solución: Ejercicio 1 - Sistema de Libros y Autores
+# Ejercicio 4: Diagrama de Clases - Sistema de Gestión Empresarial
 
 ## Análisis del Problema
 
@@ -127,5 +127,52 @@ Empresa "0..*" -- "1..*" Cliente : tiene contactos <
 ## Implementación en Kotlin
 
 ```kotlin
-TODO("Por hacer")
+abstract class Persona(
+    private val nombreCompleto: String,
+    private val fechaNacimiento: LocalDate
+) {
+    var edad: Int = 0 
+    abstract fun calcularEdad(): Int 
+}
+
+class Cliente(
+    nombreCompleto: String,
+    fechaNacimiento: LocalDate,
+    var numeroTelefono: String
+) : Persona(nombreCompleto, fechaNacimiento) {
+    override fun calcularEdad(): Int {}
+}
+
+class Empleado(
+    nombreCompleto: String,
+    fechaNacimiento: LocalDate,
+    private val sueldoBruto: Double
+) : Persona(nombreCompleto, fechaNacimiento) {
+
+    override fun calcularEdad(): Int {}
+
+    open fun calcularSueldoNeto(): Double {}
+}
+
+class EmpleadoResponsable(
+    nombreCompleto: String,
+    fechaNacimiento: LocalDate,
+    sueldoBruto: Double,
+    private val categoria: CategoriaEmpleado
+) : Empleado(nombreCompleto, fechaNacimiento, sueldoBruto) {
+    override fun calcularSueldoNeto(): Double {}
+}
+
+enum class CategoriaEmpleado {
+    Supervisor,
+    Jefe,
+    Gerente,
+    Director
+}
+
+class Empresa(
+    private val nombreCorporativo: String,
+    private val cif: String,
+    private val direccionFiscal: String
+)
 ```
