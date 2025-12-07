@@ -55,3 +55,4 @@ build/
 .env/
 # Ignorando ficheros de configuración de Java
 src/pruebas.pu
+src/pruebas2.pu
