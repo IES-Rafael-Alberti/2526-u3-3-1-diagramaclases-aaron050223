@@ -77,7 +77,6 @@ class Autor(
     private val nacionalidad: String,
     private val fechaNacimiento: LocalDate
 ) {
-
     fun escribir() {}
     fun getNombreCompleto(): String {}
 }
@@ -88,7 +87,6 @@ class Libro(
     private val numeroPaginas: Int,
     private val precio: Int 
 ) {
-
     fun leer() {}
     fun getTitulo(): String {}
     fun getPrecio(): Int {}
