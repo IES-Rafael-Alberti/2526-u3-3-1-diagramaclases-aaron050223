@@ -1,4 +1,4 @@
-# Solución: Ejercicio 1 - Sistema de Libros y Autores
+# Ejercicio 2: Diagrama de Clases - Sistema de Gestión de Cursos Universitarios
 
 ## Análisis del Problema
 
