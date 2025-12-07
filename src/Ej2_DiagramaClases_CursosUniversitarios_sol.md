@@ -117,5 +117,41 @@ Curso "1" -- "0..*" Matricula
 ## Implementación en Kotlin
 
 ```kotlin
-TODO("Por hacer")
+class Curso(
+    private val codigoUnico: Int,
+    private val nombre: String,
+    private val descripcion: String,
+    private val creditos: Int,
+    private val nivel: String
+) {
+    fun getEstudiantesMatriculados() {}
+}
+
+class Profesor(
+    private val identificador: Int,
+    private val nombreCompleto: String,
+    private val email: String,
+    private val departamento: String
+) {
+    fun darClase() {}
+    fun prepararExamenes() {}
+    fun evaluarEstudiantes() {}
+    fun getCursosImpartidos() {}
+}
+
+class Estudiante(
+    private val numeroExpediente: Int,
+    private val nombreCompleto: String,
+    private val email: String,
+    private val fechaMatriculacion: LocalDate
+) {
+    fun asistirClase() {}
+    fun estudiar() {}
+    fun presentarseExamenes() {}
+}
+
+class Matricula(
+    private val fechaMatricula: LocalDate,
+    private val nota: Double
+)
 ```
