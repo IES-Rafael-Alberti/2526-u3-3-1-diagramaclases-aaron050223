@@ -71,5 +71,26 @@ Autor "1" -- "1..*" Libro : escribe
 ## Implementación en Kotlin
 
 ```kotlin
-TODO("Por hacer")
+class Autor(
+    private val nombre: String,
+    private val val apellidos: String,
+    private val nacionalidad: String,
+    private val fechaNacimiento: LocalDate
+) {
+
+    fun escribir() {}
+    fun getNombreCompleto(): String {}
+}
+
+class Libro(
+    private val titulo: String,
+    private val isbn: String,
+    private val numeroPaginas: Int,
+    private val precio: Int 
+) {
+
+    fun leer() {}
+    fun getTitulo(): String {}
+    fun getPrecio(): Int {}
+}
 ```
