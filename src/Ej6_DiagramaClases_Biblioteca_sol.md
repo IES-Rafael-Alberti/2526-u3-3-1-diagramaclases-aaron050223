@@ -135,5 +135,50 @@ Prestamo "1" -- "0..1" Multa : genera
 ## Implementación en Kotlin
 
 ```kotlin
-TODO("Por hacer")
+enum class GeneroLibro {
+    Novela,
+    Poesia,
+    Cuento
+}
+
+enum class EstadoLibro {
+    Disponible,
+    Prestado,
+    Retrasado
+}
+
+class Autor(
+    val nombreCompleto: String,
+    val fechaNacimineto: LocalDate
+)
+
+class Libro(
+    val genero: GeneroLibro,
+    val estado: EstadoLibro
+)
+
+class Socio(
+    private val nombre: String,
+    private val dni: String,
+    private val fechaInscripcion: LocalDate,
+    var librosPoseidos: Int,
+    var multaActiva: Boolean
+)
+
+class Multa(
+    val fechaInicio: LocalDate,
+    val diasMulta: Int,
+    val fechaFin: LocalDate
+) {
+    fun calcularDiasMulta(diasRetraso: Int): Int {}
+}
+
+class Prestamo(
+    val fechaPrestamo: LocalDate,
+    val fechaDevolucion: LocalDate,
+    val fechaLimite: LocalDate,
+    val diasRetraso: Int
+) {
+    fun calcularFechaLimite() {}
+}
 ```
