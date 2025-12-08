@@ -1,4 +1,4 @@
-# Solución: Ejercicio 1 - Sistema de Libros y Autores
+# Ejercicio 6: Diagrama de Clases - Sistema de Biblioteca
 
 ## Análisis del Problema
 
