@@ -171,5 +171,82 @@ PartidoDobles "1" -- "1" Pareja : juegaVisitante >
 ## Implementación en Kotlin
 
 ```kotlin
-TODO("Por hacer")
+enum class Superficie {
+    Cesped,
+    TierraBatida,
+    PistaDura
+}
+
+enum class ResultadoPartido {
+    Local,
+    Visitante
+}
+
+class Jugador(
+    private val nombreCompleto: String,
+    private val rankingMundial: Int,
+    private val fechaNacimiento: LocalDate,
+    private val nacionalidad: String
+) {
+    fun getNombreCompleto(): String {}
+    fun getRankingMundial(): Int {}
+}
+
+class Equipo(
+    private val nombrePais: String
+) {
+    fun getNombrePais(): String {}
+}
+
+class Eliminatoria(
+    private val sede: String,
+    private val superficie: Superficie,
+    private val resultadoAcumulado: String
+) {
+    fun getEquipoAnfitrion(): Equipo {}
+    fun getSuperficie(): Superficie {}
+    fun calcularGanadorEliminatoria(): Equipo {}
+    fun getResultadoAcumulado(): String {}
+}
+
+abstract class Partido(
+    protected val numeroPartido: Int,
+    protected val setsGanadosLocal: Int,
+    protected val setsGanadosVisitante: Int,
+    private val resultado: ResultadoPartido
+) {
+    open fun getGanador(): ResultadoPartido {}
+    open fun getResultadoFinal(): String {}
+    open fun getNumeroPartido(): Int {}
+}
+
+class PartidoIndividual(
+    numeroPartido: Int,
+    setsGanadosLocal: Int,
+    setsGanadosVisitante: Int,
+    resultado: ResultadoPartido,
+    private val jugadorLocal: Jugador,
+    private val jugadorVisitante: Jugador
+) : Partido(numeroPartido, setsGanadosLocal, setsGanadosVisitante, resultado) {
+    
+    fun getJugadorLocal(): Jugador {}
+    fun getJugadorVisitante(): Jugador {}
+}
+
+class Pareja {
+    fun getJugador1(): Jugador {}
+    fun getJugador2(): Jugador {}
+}
+
+class PartidoDobles(
+    numeroPartido: Int,
+    setsGanadosLocal: Int,
+    setsGanadosVisitante: Int,
+    resultado: ResultadoPartido,
+    private val parejaLocal: Pareja,
+    private val parejaVisitante: Pareja
+) : Partido(numeroPartido, setsGanadosLocal, setsGanadosVisitante, resultado) {
+    fun getParejaLocal(): Pareja {}
+    fun getParejaVisitante(): Pareja {}
+}
 ```
